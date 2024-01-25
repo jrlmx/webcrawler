@@ -1,4 +1,5 @@
 import { crawlPage } from './modules/crawl'
+import { printReport } from './modules/report'
 
 /**
  * @return {void}
@@ -20,9 +21,7 @@ async function main() {
 
     const pages = await crawlPage(baseURL, baseURL, {})
 
-    for (let [page, hits] of Object.entries(pages)) {
-        console.log(`${page}, ${hits}`)
-    }
+    printReport(pages)
 }
 
 main()
